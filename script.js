@@ -56,28 +56,40 @@ function update(locations) {
     text.innerText = locations.text;
 }
 
+// Main Page (Town Square)
 function goTown() {
     update(locations[0]);
 }
+
+//Main Page Store Button
 function goStore() {
     update(locations[1]);
 }
+
+function buyHealth() {
+
+}
+
+function buyWeapon() {
+
+}
+
+//Main Page Cave Button
 function goCave() {
   // console.log("Going To Cave");
     update(locations[2]);
 }
-function fightDragon() {
-  // console.log("Fighting With Dragon");
-}
-function buyHealth() {
 
-}
-function buyWeapon() {
-
-}
 function fightSlime(){
 
 }
 function fightBeast(){
 
 }
+
+//Main Page Fight Dragon Button
+function fightDragon() {
+  // console.log("Fighting With Dragon");
+}
+
+

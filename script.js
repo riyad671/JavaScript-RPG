@@ -23,7 +23,7 @@ const locations = [
         name: "town square",
         "button text": ["Go TO Store", "Go To Cave", "Fight Dragon"],
         "button function": [goStore, goCave, fightDragon],
-        text: "You Are In The Town Square. You Will See Sign For \"Store\""
+        text: "You Are In The Town Square. You Will See Sign For Store"
     },
     {
         name: "store",
@@ -31,14 +31,14 @@ const locations = [
         "button function": [buyHealth, buyWeapon, goTown],
         text: "You Are In The Store"
     }
-];
+]
 
 // Initialize Button
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
-function location() {
+function update(locations) {
     button1.innerText = locations["button text"][0];
     button2.innerText = locations["button text"][1];
     button3.innerText = locations["button text"][2];
@@ -55,7 +55,7 @@ function goTown() {
 }
 
 function goStore() {
-    
+    update(locations[1]);
 }
 function goCave() {
   // console.log("Going To Cave");

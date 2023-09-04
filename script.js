@@ -37,6 +37,24 @@ const weapon = [
     }
 ];
 
+const monster = [
+    {
+        name: "slime",
+        level: 2,
+        health: 15
+    },
+    {
+        name: "franged beast",
+        level: 8,
+        health: 60
+    },
+    {
+        name: "dragon",
+        level: 20,
+        health: 300
+    },
+]
+
 const locations = [
     {
         name: "town square",
@@ -55,6 +73,12 @@ const locations = [
         "button text": ["Fight Slime", "Fight Fanged Beast", "Go To Town Square"],
         "button function": [fightSlime, fightBeast, goTown],
         text: "You Are In The Cave. You Can See Some Monsters"
+    },
+    {
+        name: "fight",
+        "button text": ["Attak", "Dodge", "Run"],
+        "button function": [attack, dodge, goTown],
+        text: "You Are Fighting With Monster"
     }
 ];
 
@@ -136,15 +160,28 @@ function goCave() {
 }
 
 function fightSlime(){
-
+    fighting = 0;
+    goFight();
 }
 function fightBeast(){
-
+    fighting = 1;
+    goFight();
 }
 
-//Main Page Fight Dragon Button
 function fightDragon() {
-  // console.log("Fighting With Dragon");
+    fighting = 2;
+    goFight();
 }
 
+function goFight(){
+    update(locations[3]);
+}
+
+function attack(){
+
+}
+
+function dodge(){
+
+}
 

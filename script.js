@@ -18,6 +18,25 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthTxt = document.querySelector("#monsterHealth");
 
+const weapon = [
+    {
+        name: "stick",
+        power: 5
+    },
+    {
+        name: "dagger",
+        power: 30
+    },
+    {
+        name: "claw hammer",
+        power: 50
+    },
+    {
+        name: "sword",
+        power: 100
+    }
+];
+
 const locations = [
     {
         name: "town square",
@@ -37,7 +56,7 @@ const locations = [
         "button function": [fightSlime, fightBeast, goTown],
         text: "You Are In The Cave. You Can See Some Monsters"
     }
-]
+];
 
 // Initialize Button
 button1.onclick = goStore;
@@ -78,7 +97,36 @@ function buyHealth() {
 }
 
 function buyWeapon() {
+    if(currentWeapon < weapon.length-1){
+        if(gold >=30){
+            gold -= 30;
+            currentWeapon++;
+            goldText.innerText = gold;
+            let newWeapon = weapon[currentWeapon].name;
+            text.innerText = "Now, you have a new " + newWeapon;
+            inventory.push(newWeapon);
+            text.innerText += "\nIn your inventory  you have: " + inventory ;
+        } else {
+            text.innerText = "You do not have enough gold for buy weapon";
+        }
+    } else {
+        text.innerText = "You have already own the most powerfull weapon...!";
+        button2.innerText = "Sell weapon for 15 gold";
+        button2.onclick = sellWeapon;
+    }
+}
 
+function sellWeapon(){
+    if(inventory.length > 1){
+        gold +=30;
+        goldText.innerText = gold;
+        let currentWeapon = inventory.shift();
+        text.innerText = "You sold " + currentWeapon + " for 30 gold";
+        // text.innerText = "You sold " + currentWeapon + ".";
+        text.innerText += "In your inventory you have: " + inventory;
+    } else {
+        text.innerText = "Don't sell your only weapon";
+    }
 }
 
 //Main Page Cave Button

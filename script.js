@@ -18,7 +18,7 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
-const weapon = [
+const weapons = [
     {
         name: "stick",
         power: 5
@@ -121,12 +121,12 @@ function buyHealth() {
 }
 
 function buyWeapon() {
-    if(currentWeapon < weapon.length-1){
+    if(currentWeapon < weapons.length-1){
         if(gold >=30){
             gold -= 30;
             currentWeapon++;
             goldText.innerText = gold;
-            let newWeapon = weapon[currentWeapon].name;
+            let newWeapon = weapons[currentWeapon].name;
             text.innerText = "Now, you have a new " + newWeapon;
             inventory.push(newWeapon);
             text.innerText += "\nIn your inventory  you have: " + inventory ;
@@ -182,7 +182,18 @@ function goFight(){
 }
 
 function attack(){
-
+    text.innerText = "The " + monsters[fighting].name + " attacks.";
+    text.innerText += "You can attack with your " + weapons[currentWeapon].name + '.';
+    health -= monsters[fighting].level;
+    monsterHealth -= weapons[currentWeapon].power;
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    health.innerText = health;
+    monsterHealthText.innerText = monsterHealth;
+    if(health <= 0){
+        lose();
+    } else if(monsterHealth <= 0){
+        defatMonster();
+    }
 }
 
 function dodge(){

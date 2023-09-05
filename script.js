@@ -200,3 +200,10 @@ function dodge(){
 
 }
 
+function lose(){
+
+}
+function defatMonster(){
+    
+}
+

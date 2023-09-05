@@ -79,6 +79,12 @@ const locations = [
         "button text": ["Attak", "Dodge", "Run"],
         "button function": [attack, dodge, goTown],
         text: "You Are Fighting With Monster"
+    },
+    {
+        name: "kill monster",
+        "button text": ["Go To Town Square", "Go To Town Square", "Go To Town Square"],
+        "button function": [goTown, goTown, goTown],
+        text: "You kill the monster and gain some XP and Gold."
     }
 ];
 

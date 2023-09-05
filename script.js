@@ -85,6 +85,12 @@ const locations = [
         "button text": ["Go To Town Square", "Go To Town Square", "Go To Town Square"],
         "button function": [goTown, goTown, goTown],
         text: "You kill the monster and gain some XP and Gold."
+    },
+    {
+        name: "lose",
+        "button text": ["Replay", "Replay", "Replay"],
+        "button function": [restart, restart, restart],
+        text: "You die ☠️"
     }
 ];
 

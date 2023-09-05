@@ -214,7 +214,7 @@ function dodge(){
 }
 
 function lose(){
-
+    update(locations[5]);
 }
 function defatMonster(){
     gold += Math.floor(monsters[fighting].level * 6.7);

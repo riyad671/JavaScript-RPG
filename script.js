@@ -16,7 +16,7 @@ const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
-const monsterHealthTxt = document.querySelector("#monsterHealth");
+const monsterHealthText = document.querySelector("#monsterHealth");
 
 const weapon = [
     {
@@ -37,7 +37,7 @@ const weapon = [
     }
 ];
 
-const monster = [
+const monsters = [
     {
         name: "slime",
         level: 2,
@@ -175,6 +175,10 @@ function fightDragon() {
 
 function goFight(){
     update(locations[3]);
+    monsterHealth = monsters[fighting].health;
+    monsterStats.style.display ="block";
+    monsterNameText.innerText = monsters[fighting].name;
+    monsterHealthText.innerText = monsterHealth;
 }
 
 function attack(){
